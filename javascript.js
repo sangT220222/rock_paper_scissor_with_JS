@@ -11,7 +11,7 @@ function getComputerChoice()
 // console.log(getComputerChoice()); testing purposes
 function playerSelection()
 {
-    return prompt("Please pick either rock, paper or scissors below")
+    return prompt("Please pick either rock, paper or scissors below") //interactive prompt to allow users' input
 }
 
 function playRound(cpu_move, player_move)
@@ -65,7 +65,7 @@ function game()
     while (i < 5)
     {
         outcome = playRound(getComputerChoice(),playerSelection());
-        if (outcome.includes("win")) 
+        if (outcome.includes("win")) //checks if playRound() returns user or cpu winning and increment accordingly
         {
             player_score += 1;
         }
@@ -78,6 +78,7 @@ function game()
     }
 
     console.log("Player score : " + player_score + ". CPU score : " + cpu_score);
+
     if (player_score > cpu_score)
     {
         console.log("You win!");
@@ -91,4 +92,4 @@ function game()
     }
 }
 
-game();
+game(); //calling the "main function"
