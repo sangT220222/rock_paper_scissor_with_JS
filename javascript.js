@@ -57,4 +57,38 @@ function playRound(cpu_move, player_move)
         return "Please enter an input of rock, paper or scissors"
     }
 }
-console.log(playRound(getComputerChoice(),playerSelection()))
+// console.log(playRound(getComputerChoice(),playerSelection()))
+
+function game()
+{   
+    var player_score = 0, i = 0, cpu_score = 0;
+    while (i < 5)
+    {
+        outcome = playRound(getComputerChoice(),playerSelection());
+        if (outcome.includes("win")) 
+        {
+            player_score += 1;
+        }
+        else
+        {
+            cpu_score += 1;
+        }
+
+        i+=1;
+    }
+
+    console.log("Player score : " + player_score + ". CPU score : " + cpu_score);
+    if (player_score > cpu_score)
+    {
+        console.log("You win!");
+        return player_score;
+    }
+    else
+    {
+
+        console.log("You lost!");
+        return cpu_score;
+    }
+}
+
+game();
